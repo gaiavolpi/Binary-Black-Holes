@@ -1,4 +1,4 @@
-# # Merging Binary Black Holes from Wolf-Rayet - Black Hole progenitors
+# Merging Binary Black Holes from Wolf-Rayet - Black Hole progenitors
 
 > Authors: Puggioni Dario, Alberto Salvador, Giancarlo Saran Gattorno, Gaia Volpi
 
