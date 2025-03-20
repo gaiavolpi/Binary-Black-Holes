@@ -1,0 +1,4 @@
+"(nworkers,n_threads)",time[s],time[min]
+100,311.07,5 m 11.1 s
+400,261.31,4 m 21.3 s
+1200,260.83,4 m 20.8 s

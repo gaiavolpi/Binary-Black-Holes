@@ -1,0 +1,291 @@
+2024-08-02 17:15:58,910 - distributed.deploy.ssh - INFO - 2024-08-02 17:15:58,909 - distributed.scheduler - INFO - State start
+2024-08-02 17:15:58,912 - distributed.deploy.ssh - INFO - 2024-08-02 17:15:58,910 - distributed.diskutils - INFO - Found stale lock file and directory '/tmp/dask-scratch-space-1002/worker-8db2gwz9', purging
+2024-08-02 17:15:58,914 - distributed.deploy.ssh - INFO - 2024-08-02 17:15:58,914 - distributed.scheduler - INFO -   Scheduler at:  tcp://10.67.22.174:40367
+2024-08-02 17:15:59,364 - distributed.deploy.ssh - INFO - 2024-08-02 17:15:59,363 - distributed.nanny - INFO -         Start Nanny at: 'tcp://10.67.22.174:39453'
+2024-08-02 17:15:59,542 - distributed.deploy.ssh - INFO - 2024-08-02 17:15:59,539 - distributed.nanny - INFO -         Start Nanny at: 'tcp://10.67.22.251:38199'
+2024-08-02 17:15:59,545 - distributed.deploy.ssh - INFO - 2024-08-02 17:15:59,544 - distributed.nanny - INFO -         Start Nanny at: 'tcp://10.67.22.93:39891'
+2024-08-02 17:15:59,685 - distributed.deploy.ssh - INFO - 2024-08-02 17:15:59,685 - distributed.worker - INFO -       Start worker at:   tcp://10.67.22.174:40477
+2024-08-02 17:15:59,833 - distributed.deploy.ssh - INFO - 2024-08-02 17:15:59,831 - distributed.diskutils - INFO - Found stale lock file and directory '/tmp/dask-scratch-space-1002/worker-k9rh7593', purging
+2024-08-02 17:15:59,845 - distributed.deploy.ssh - INFO - 2024-08-02 17:15:59,842 - distributed.worker - INFO -       Start worker at:   tcp://10.67.22.251:33701
+2024-08-02 17:15:59,846 - distributed.deploy.ssh - INFO - 2024-08-02 17:15:59,843 - distributed.diskutils - INFO - Found stale lock file and directory '/tmp/dask-scratch-space-1002/worker-59r7ha1f', purging
+2024-08-02 17:15:59,857 - distributed.deploy.ssh - INFO - 2024-08-02 17:15:59,855 - distributed.worker - INFO -       Start worker at:    tcp://10.67.22.93:39325
+2024-08-02 17:24:06,933 - distributed.deploy.ssh - INFO - 2024-08-02 17:24:06,932 - distributed.scheduler - INFO - State start
+2024-08-02 17:24:06,936 - distributed.deploy.ssh - INFO - 2024-08-02 17:24:06,935 - distributed.scheduler - INFO -   Scheduler at:  tcp://10.67.22.174:38901
+2024-08-02 17:24:07,379 - distributed.deploy.ssh - INFO - 2024-08-02 17:24:07,379 - distributed.nanny - INFO -         Start Nanny at: 'tcp://10.67.22.174:39321'
+2024-08-02 17:24:07,583 - distributed.deploy.ssh - INFO - 2024-08-02 17:24:07,581 - distributed.nanny - INFO -         Start Nanny at: 'tcp://10.67.22.93:46389'
+2024-08-02 17:24:07,584 - distributed.deploy.ssh - INFO - 2024-08-02 17:24:07,583 - distributed.nanny - INFO -         Start Nanny at: 'tcp://10.67.22.251:43109'
+2024-08-02 17:24:07,719 - distributed.deploy.ssh - INFO - 2024-08-02 17:24:07,718 - distributed.worker - INFO -       Start worker at:   tcp://10.67.22.174:37005
+2024-08-02 17:24:07,890 - distributed.deploy.ssh - INFO - 2024-08-02 17:24:07,888 - distributed.worker - INFO -       Start worker at:    tcp://10.67.22.93:45757
+2024-08-02 17:24:07,926 - distributed.deploy.ssh - INFO - 2024-08-02 17:24:07,925 - distributed.worker - INFO -       Start worker at:   tcp://10.67.22.251:36729
+2024-08-02 17:26:05,994 - distributed.deploy.cluster - WARNING - Failed to sync cluster info multiple times - perhaps there's a connection issue? Error:
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/comm/core.py", line 342, in connect
+    comm = await wait_for(
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/utils.py", line 1961, in wait_for
+    return await asyncio.wait_for(fut, timeout)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/comm/tcp.py", line 559, in connect
+    convert_stream_closed_error(self, e)
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/comm/tcp.py", line 140, in convert_stream_closed_error
+    raise CommClosedError(f"in {obj}: {exc.__class__.__name__}: {exc}") from exc
+distributed.comm.core.CommClosedError: in <distributed.comm.tcp.TCPConnector object at 0x7fa6c4669fc0>: ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/deploy/cluster.py", line 165, in _sync_cluster_info
+    await self.scheduler_comm.set_metadata(
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/core.py", line 1312, in send_recv_from_rpc
+    comm = await self.live_comm()
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/core.py", line 1271, in live_comm
+    comm = await connect(
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/comm/core.py", line 368, in connect
+    raise OSError(
+OSError: Timed out trying to connect to tcp://10.67.22.174:40367 after 30 s
+2024-08-02 17:27:22,704 - distributed.deploy.ssh - INFO - 2024-08-02 17:27:22,704 - distributed.scheduler - INFO - State start
+2024-08-02 17:27:22,704 - distributed.deploy.ssh - INFO - 2024-08-02 17:27:22,704 - distributed.scheduler - INFO - State start
+2024-08-02 17:27:22,708 - distributed.deploy.ssh - INFO - 2024-08-02 17:27:22,707 - distributed.scheduler - INFO -   Scheduler at:  tcp://10.67.22.174:34511
+2024-08-02 17:27:22,708 - distributed.deploy.ssh - INFO - 2024-08-02 17:27:22,707 - distributed.scheduler - INFO -   Scheduler at:  tcp://10.67.22.174:34511
+2024-08-02 17:27:23,144 - distributed.deploy.ssh - INFO - 2024-08-02 17:27:23,143 - distributed.nanny - INFO -         Start Nanny at: 'tcp://10.67.22.174:40399'
+2024-08-02 17:27:23,144 - distributed.deploy.ssh - INFO - 2024-08-02 17:27:23,143 - distributed.nanny - INFO -         Start Nanny at: 'tcp://10.67.22.174:40399'
+2024-08-02 17:27:23,353 - distributed.deploy.ssh - INFO - 2024-08-02 17:27:23,351 - distributed.nanny - INFO -         Start Nanny at: 'tcp://10.67.22.93:33649'
+2024-08-02 17:27:23,353 - distributed.deploy.ssh - INFO - 2024-08-02 17:27:23,351 - distributed.nanny - INFO -         Start Nanny at: 'tcp://10.67.22.93:33649'
+2024-08-02 17:27:23,464 - distributed.deploy.ssh - INFO - 2024-08-02 17:27:23,464 - distributed.worker - INFO -       Start worker at:   tcp://10.67.22.174:45915
+2024-08-02 17:27:23,464 - distributed.deploy.ssh - INFO - 2024-08-02 17:27:23,464 - distributed.worker - INFO -       Start worker at:   tcp://10.67.22.174:45915
+2024-08-02 17:27:23,498 - distributed.deploy.ssh - INFO - 2024-08-02 17:27:23,498 - distributed.nanny - INFO -         Start Nanny at: 'tcp://10.67.22.251:44455'
+2024-08-02 17:27:23,498 - distributed.deploy.ssh - INFO - 2024-08-02 17:27:23,498 - distributed.nanny - INFO -         Start Nanny at: 'tcp://10.67.22.251:44455'
+2024-08-02 17:27:23,664 - distributed.deploy.ssh - INFO - 2024-08-02 17:27:23,662 - distributed.worker - INFO -       Start worker at:    tcp://10.67.22.93:36335
+2024-08-02 17:27:23,664 - distributed.deploy.ssh - INFO - 2024-08-02 17:27:23,662 - distributed.worker - INFO -       Start worker at:    tcp://10.67.22.93:36335
+2024-08-02 17:27:23,853 - distributed.deploy.ssh - INFO - 2024-08-02 17:27:23,852 - distributed.worker - INFO -       Start worker at:   tcp://10.67.22.251:40617
+2024-08-02 17:27:23,853 - distributed.deploy.ssh - INFO - 2024-08-02 17:27:23,852 - distributed.worker - INFO -       Start worker at:   tcp://10.67.22.251:40617
+2024-08-02 17:30:04,667 - distributed.deploy.cluster - WARNING - Failed to sync cluster info multiple times - perhaps there's a connection issue? Error:
+Traceback (most recent call last):
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/comm/tcp.py", line 546, in connect
+    stream = await self.client.connect(
+  File "/home/salvador/.local/lib/python3.10/site-packages/tornado/tcpclient.py", line 279, in connect
+    af, addr, stream = await connector.start(connect_timeout=timeout)
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 456, in wait_for
+    return fut.result()
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/comm/core.py", line 342, in connect
+    comm = await wait_for(
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/utils.py", line 1961, in wait_for
+    return await asyncio.wait_for(fut, timeout)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 458, in wait_for
+    raise exceptions.TimeoutError() from exc
+asyncio.exceptions.TimeoutError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/deploy/cluster.py", line 165, in _sync_cluster_info
+    await self.scheduler_comm.set_metadata(
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/core.py", line 1312, in send_recv_from_rpc
+    comm = await self.live_comm()
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/core.py", line 1271, in live_comm
+    comm = await connect(
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/comm/core.py", line 368, in connect
+    raise OSError(
+OSError: Timed out trying to connect to tcp://10.67.22.174:38901 after 30 s
+2024-08-02 17:30:04,667 - distributed.deploy.cluster - WARNING - Failed to sync cluster info multiple times - perhaps there's a connection issue? Error:
+Traceback (most recent call last):
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/comm/tcp.py", line 546, in connect
+    stream = await self.client.connect(
+  File "/home/salvador/.local/lib/python3.10/site-packages/tornado/tcpclient.py", line 279, in connect
+    af, addr, stream = await connector.start(connect_timeout=timeout)
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 456, in wait_for
+    return fut.result()
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/comm/core.py", line 342, in connect
+    comm = await wait_for(
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/utils.py", line 1961, in wait_for
+    return await asyncio.wait_for(fut, timeout)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 458, in wait_for
+    raise exceptions.TimeoutError() from exc
+asyncio.exceptions.TimeoutError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/deploy/cluster.py", line 165, in _sync_cluster_info
+    await self.scheduler_comm.set_metadata(
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/core.py", line 1312, in send_recv_from_rpc
+    comm = await self.live_comm()
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/core.py", line 1271, in live_comm
+    comm = await connect(
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/comm/core.py", line 368, in connect
+    raise OSError(
+OSError: Timed out trying to connect to tcp://10.67.22.174:38901 after 30 s
+2024-08-02 17:34:06,462 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:06,461 - distributed.scheduler - INFO - State start
+2024-08-02 17:34:06,462 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:06,461 - distributed.scheduler - INFO - State start
+2024-08-02 17:34:06,462 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:06,461 - distributed.scheduler - INFO - State start
+2024-08-02 17:34:06,467 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:06,467 - distributed.scheduler - INFO -   Scheduler at:  tcp://10.67.22.174:41823
+2024-08-02 17:34:06,467 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:06,467 - distributed.scheduler - INFO -   Scheduler at:  tcp://10.67.22.174:41823
+2024-08-02 17:34:06,467 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:06,467 - distributed.scheduler - INFO -   Scheduler at:  tcp://10.67.22.174:41823
+2024-08-02 17:34:07,236 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:07,235 - distributed.nanny - INFO -         Start Nanny at: 'tcp://10.67.22.174:35325'
+2024-08-02 17:34:07,236 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:07,235 - distributed.nanny - INFO -         Start Nanny at: 'tcp://10.67.22.174:35325'
+2024-08-02 17:34:07,236 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:07,235 - distributed.nanny - INFO -         Start Nanny at: 'tcp://10.67.22.174:35325'
+2024-08-02 17:34:07,240 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:07,239 - distributed.nanny - INFO -         Start Nanny at: 'tcp://10.67.22.174:37689'
+2024-08-02 17:34:07,240 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:07,239 - distributed.nanny - INFO -         Start Nanny at: 'tcp://10.67.22.174:37689'
+2024-08-02 17:34:07,240 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:07,239 - distributed.nanny - INFO -         Start Nanny at: 'tcp://10.67.22.174:37689'
+2024-08-02 17:34:07,579 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:07,578 - distributed.worker - INFO -       Start worker at:   tcp://10.67.22.174:45523
+2024-08-02 17:34:07,579 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:07,578 - distributed.worker - INFO -       Start worker at:   tcp://10.67.22.174:45523
+2024-08-02 17:34:07,579 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:07,578 - distributed.worker - INFO -       Start worker at:   tcp://10.67.22.174:45523
+2024-08-02 17:34:07,581 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:07,578 - distributed.worker - INFO -          Listening to:   tcp://10.67.22.174:45523
+2024-08-02 17:34:07,581 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:07,578 - distributed.worker - INFO -          Listening to:   tcp://10.67.22.174:45523
+2024-08-02 17:34:07,581 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:07,578 - distributed.worker - INFO -          Listening to:   tcp://10.67.22.174:45523
+2024-08-02 17:34:07,582 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:07,578 - distributed.worker - INFO -       Start worker at:   tcp://10.67.22.174:33005
+2024-08-02 17:34:07,582 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:07,578 - distributed.worker - INFO -       Start worker at:   tcp://10.67.22.174:33005
+2024-08-02 17:34:07,582 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:07,578 - distributed.worker - INFO -       Start worker at:   tcp://10.67.22.174:33005
+2024-08-02 17:34:07,933 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:07,931 - distributed.nanny - INFO -         Start Nanny at: 'tcp://10.67.22.93:43215'
+2024-08-02 17:34:07,933 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:07,931 - distributed.nanny - INFO -         Start Nanny at: 'tcp://10.67.22.93:43215'
+2024-08-02 17:34:07,933 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:07,931 - distributed.nanny - INFO -         Start Nanny at: 'tcp://10.67.22.93:43215'
+2024-08-02 17:34:07,935 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:07,933 - distributed.nanny - INFO -         Start Nanny at: 'tcp://10.67.22.93:43397'
+2024-08-02 17:34:07,935 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:07,933 - distributed.nanny - INFO -         Start Nanny at: 'tcp://10.67.22.93:43397'
+2024-08-02 17:34:07,935 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:07,933 - distributed.nanny - INFO -         Start Nanny at: 'tcp://10.67.22.93:43397'
+2024-08-02 17:34:08,248 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:08,246 - distributed.worker - INFO -       Start worker at:    tcp://10.67.22.93:42529
+2024-08-02 17:34:08,248 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:08,246 - distributed.worker - INFO -       Start worker at:    tcp://10.67.22.93:42529
+2024-08-02 17:34:08,248 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:08,246 - distributed.worker - INFO -       Start worker at:    tcp://10.67.22.93:42529
+2024-08-02 17:34:08,250 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:08,246 - distributed.worker - INFO -          Listening to:    tcp://10.67.22.93:42529
+2024-08-02 17:34:08,250 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:08,246 - distributed.worker - INFO -          Listening to:    tcp://10.67.22.93:42529
+2024-08-02 17:34:08,250 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:08,246 - distributed.worker - INFO -          Listening to:    tcp://10.67.22.93:42529
+2024-08-02 17:34:08,251 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:08,246 - distributed.worker - INFO -       Start worker at:    tcp://10.67.22.93:45049
+2024-08-02 17:34:08,251 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:08,246 - distributed.worker - INFO -       Start worker at:    tcp://10.67.22.93:45049
+2024-08-02 17:34:08,251 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:08,246 - distributed.worker - INFO -       Start worker at:    tcp://10.67.22.93:45049
+2024-08-02 17:34:10,570 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:10,570 - distributed.nanny - INFO -         Start Nanny at: 'tcp://10.67.22.251:46143'
+2024-08-02 17:34:10,570 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:10,570 - distributed.nanny - INFO -         Start Nanny at: 'tcp://10.67.22.251:46143'
+2024-08-02 17:34:10,570 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:10,570 - distributed.nanny - INFO -         Start Nanny at: 'tcp://10.67.22.251:46143'
+2024-08-02 17:34:10,573 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:10,573 - distributed.nanny - INFO -         Start Nanny at: 'tcp://10.67.22.251:45103'
+2024-08-02 17:34:10,573 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:10,573 - distributed.nanny - INFO -         Start Nanny at: 'tcp://10.67.22.251:45103'
+2024-08-02 17:34:10,573 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:10,573 - distributed.nanny - INFO -         Start Nanny at: 'tcp://10.67.22.251:45103'
+2024-08-02 17:34:10,903 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:10,903 - distributed.worker - INFO -       Start worker at:   tcp://10.67.22.251:34095
+2024-08-02 17:34:10,903 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:10,903 - distributed.worker - INFO -       Start worker at:   tcp://10.67.22.251:34095
+2024-08-02 17:34:10,903 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:10,903 - distributed.worker - INFO -       Start worker at:   tcp://10.67.22.251:34095
+2024-08-02 17:34:10,904 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:10,903 - distributed.worker - INFO -          Listening to:   tcp://10.67.22.251:34095
+2024-08-02 17:34:10,904 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:10,903 - distributed.worker - INFO -          Listening to:   tcp://10.67.22.251:34095
+2024-08-02 17:34:10,904 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:10,903 - distributed.worker - INFO -          Listening to:   tcp://10.67.22.251:34095
+2024-08-02 17:34:10,905 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:10,903 - distributed.worker - INFO -          dashboard at:         10.67.22.251:39103
+2024-08-02 17:34:10,905 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:10,903 - distributed.worker - INFO -          dashboard at:         10.67.22.251:39103
+2024-08-02 17:34:10,905 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:10,903 - distributed.worker - INFO -          dashboard at:         10.67.22.251:39103
+2024-08-02 17:34:10,906 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:10,903 - distributed.worker - INFO - Waiting to connect to:   tcp://10.67.22.174:41823
+2024-08-02 17:34:10,906 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:10,903 - distributed.worker - INFO - Waiting to connect to:   tcp://10.67.22.174:41823
+2024-08-02 17:34:10,906 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:10,903 - distributed.worker - INFO - Waiting to connect to:   tcp://10.67.22.174:41823
+2024-08-02 17:34:10,907 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:10,903 - distributed.worker - INFO - -------------------------------------------------
+2024-08-02 17:34:10,907 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:10,903 - distributed.worker - INFO - -------------------------------------------------
+2024-08-02 17:34:10,907 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:10,903 - distributed.worker - INFO - -------------------------------------------------
+2024-08-02 17:34:10,907 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:10,903 - distributed.worker - INFO -       Start worker at:   tcp://10.67.22.251:42471
+2024-08-02 17:34:10,907 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:10,903 - distributed.worker - INFO -       Start worker at:   tcp://10.67.22.251:42471
+2024-08-02 17:34:10,907 - distributed.deploy.ssh - INFO - 2024-08-02 17:34:10,903 - distributed.worker - INFO -       Start worker at:   tcp://10.67.22.251:42471
+2024-08-02 17:36:46,111 - distributed.deploy.cluster - WARNING - Failed to sync cluster info multiple times - perhaps there's a connection issue? Error:
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/comm/core.py", line 342, in connect
+    comm = await wait_for(
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/utils.py", line 1961, in wait_for
+    return await asyncio.wait_for(fut, timeout)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/comm/tcp.py", line 559, in connect
+    convert_stream_closed_error(self, e)
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/comm/tcp.py", line 140, in convert_stream_closed_error
+    raise CommClosedError(f"in {obj}: {exc.__class__.__name__}: {exc}") from exc
+distributed.comm.core.CommClosedError: in <distributed.comm.tcp.TCPConnector object at 0x7fa6c42dea70>: ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/deploy/cluster.py", line 165, in _sync_cluster_info
+    await self.scheduler_comm.set_metadata(
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/core.py", line 1312, in send_recv_from_rpc
+    comm = await self.live_comm()
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/core.py", line 1271, in live_comm
+    comm = await connect(
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/comm/core.py", line 368, in connect
+    raise OSError(
+OSError: Timed out trying to connect to tcp://10.67.22.174:34511 after 30 s
+2024-08-02 17:36:46,111 - distributed.deploy.cluster - WARNING - Failed to sync cluster info multiple times - perhaps there's a connection issue? Error:
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/comm/core.py", line 342, in connect
+    comm = await wait_for(
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/utils.py", line 1961, in wait_for
+    return await asyncio.wait_for(fut, timeout)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/comm/tcp.py", line 559, in connect
+    convert_stream_closed_error(self, e)
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/comm/tcp.py", line 140, in convert_stream_closed_error
+    raise CommClosedError(f"in {obj}: {exc.__class__.__name__}: {exc}") from exc
+distributed.comm.core.CommClosedError: in <distributed.comm.tcp.TCPConnector object at 0x7fa6c42dea70>: ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/deploy/cluster.py", line 165, in _sync_cluster_info
+    await self.scheduler_comm.set_metadata(
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/core.py", line 1312, in send_recv_from_rpc
+    comm = await self.live_comm()
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/core.py", line 1271, in live_comm
+    comm = await connect(
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/comm/core.py", line 368, in connect
+    raise OSError(
+OSError: Timed out trying to connect to tcp://10.67.22.174:34511 after 30 s
+2024-08-02 17:36:46,111 - distributed.deploy.cluster - WARNING - Failed to sync cluster info multiple times - perhaps there's a connection issue? Error:
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/comm/core.py", line 342, in connect
+    comm = await wait_for(
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/utils.py", line 1961, in wait_for
+    return await asyncio.wait_for(fut, timeout)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/comm/tcp.py", line 559, in connect
+    convert_stream_closed_error(self, e)
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/comm/tcp.py", line 140, in convert_stream_closed_error
+    raise CommClosedError(f"in {obj}: {exc.__class__.__name__}: {exc}") from exc
+distributed.comm.core.CommClosedError: in <distributed.comm.tcp.TCPConnector object at 0x7fa6c42dea70>: ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/deploy/cluster.py", line 165, in _sync_cluster_info
+    await self.scheduler_comm.set_metadata(
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/core.py", line 1312, in send_recv_from_rpc
+    comm = await self.live_comm()
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/core.py", line 1271, in live_comm
+    comm = await connect(
+  File "/home/salvador/.local/lib/python3.10/site-packages/distributed/comm/core.py", line 368, in connect
+    raise OSError(
+OSError: Timed out trying to connect to tcp://10.67.22.174:34511 after 30 s
